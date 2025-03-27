@@ -1,8 +1,7 @@
 #!/bin/bash
-# Make FFmpeg binaries executable
-chmod +x ./bin/ffmpeg
-chmod +x ./bin/ffplay
-chmod +x ./bin/ffprobe
+# Set executable permissions
+chmod +x ./bin/*
 
-# Add to PATH
-export PATH=$PATH:$(pwd)/bin
+# Verify FFmpeg
+./bin/ffmpeg -version || exit 1
+pip install -r requirements.txt
