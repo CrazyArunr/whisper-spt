@@ -10,10 +10,12 @@ import os
 import sys
 from pathlib import Path
 
-# Set FFmpeg path
-ffmpeg_path = str(Path(__file__).parent / "bin",
-os.environ["PATH"] += os.pathsep + ffmpeg_path,
-os.environ["FFMPEG_BINARY"] = str(Path(ffmpeg_path) / "ffmpeg"
+# 1. Set FFmpeg path correctly
+current_dir = Path(__file__).parent
+ffmpeg_path = str(current_dir / "bin")  # Remove the trailing comma
+os.environ["PATH"] = f"{os.environ['PATH']}{os.pathsep}{ffmpeg_path}"
+os.environ["FFMPEG_BINARY"] = str(current_dir / "bin" / "ffmpeg")
+
 
 # Verify FFmpeg
 try:
