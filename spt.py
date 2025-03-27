@@ -12,7 +12,7 @@ from pathlib import Path
 
 # Set FFmpeg path
 ffmpeg_path = str(Path(__file__).parent / "bin",
-os.environ["PATH"] += os.pathsep + ffmpeg_path
+os.environ["PATH"] += os.pathsep + ffmpeg_path,
 os.environ["FFMPEG_BINARY"] = str(Path(ffmpeg_path) / "ffmpeg"
 
 # Verify FFmpeg
