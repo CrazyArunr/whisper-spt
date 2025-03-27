@@ -67,3 +67,8 @@ urllib3==2.3.0
 watchdog==6.0.0
 websocket-client==1.8.0
 wsproto==1.2.0
+transformers
+torch
+streamlit
+audio-recorder-streamlit
+pydub  # Fallback if FFmpeg has issues
