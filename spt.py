@@ -6,6 +6,24 @@ import tempfile
 import os
 import warnings
 import asyncio
+import os
+import sys
+from pathlib import Path
+
+# Set FFmpeg path
+ffmpeg_path = str(Path(__file__).parent / "bin"
+os.environ["PATH"] += os.pathsep + ffmpeg_path
+os.environ["FFMPEG_BINARY"] = str(Path(ffmpeg_path) / "ffmpeg"
+
+# Verify FFmpeg
+try:
+    import subprocess
+    subprocess.run(["ffmpeg", "-version"], check=True, 
+                  stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print("FFmpeg successfully configured!")
+except Exception as e:
+    print(f"FFmpeg error: {str(e)}")
+    sys.exit(1)
 
 # Configure environment
 os.environ["PATH"] += os.pathsep + r"C:\Users\Arun\Downloads\ffmpeg-7.1.1-essentials_build\ffmpeg-7.1.1-essentials_build\bin"
